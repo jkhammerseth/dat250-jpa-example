@@ -8,17 +8,21 @@ public class Bank {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    private String name;
+    @OneToMany
+    @JoinColumn(name = "creditCard_id")
+    private Set<CreditCard> creditCards;
 
     public Long getId() {
         return id;
     }
-
     public String getName() {
-        // TODO: implement method!
-        return null;
+        return name;
     }
-
+    public void setName(String name) {
+        this.name = name;
+    }
     public Set<CreditCard> getOwnedCards() {
-        return null;
+        return creditCards;
     }
 }
