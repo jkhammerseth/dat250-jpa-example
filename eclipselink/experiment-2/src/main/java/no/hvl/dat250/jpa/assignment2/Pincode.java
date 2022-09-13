@@ -5,8 +5,9 @@ import javax.persistence.*;
 @Entity
 public class Pincode {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+
     private String pincode;
     private Integer count;
 

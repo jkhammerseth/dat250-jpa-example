@@ -54,6 +54,7 @@ public class Main {
         creditCards.add(firstCard);
         creditCards.add(secondCard);
         person.setCreditCards(creditCards);
+        System.out.println("Max has " + person.getCreditCards().size() + " creditCards");
 
         firstCard.setPincode(pincode);
         secondCard.setPincode(pincode);

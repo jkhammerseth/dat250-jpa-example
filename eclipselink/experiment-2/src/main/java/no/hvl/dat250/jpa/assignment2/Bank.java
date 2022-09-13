@@ -6,11 +6,12 @@ import java.util.Set;
 @Entity
 public class Bank {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+
     private String name;
-    @OneToMany
-    @JoinColumn(name = "creditCard_id")
+
+    @OneToMany(mappedBy = "bank")
     private Set<CreditCard> creditCards;
 
     public Long getId() {

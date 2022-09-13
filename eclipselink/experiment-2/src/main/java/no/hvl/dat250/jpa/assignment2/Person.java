@@ -8,14 +8,14 @@ public class Person {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+
+    @Column(name = "NAME")
     private String name;
 
-    @ManyToMany(fetch = FetchType.LAZY)
-    @JoinColumn(name = "address_id")
+    @ManyToMany(fetch = FetchType.LAZY) // , targetEntity = Address.class-??
     private Set<Address> addresses;
 
-    @ManyToMany(fetch = FetchType.LAZY)
-    @JoinColumn(name = "creditCard_id")
+    @OneToMany(fetch = FetchType.LAZY, targetEntity = CreditCard.class)
     private Set<CreditCard> creditCards;
 
     public String getName() {

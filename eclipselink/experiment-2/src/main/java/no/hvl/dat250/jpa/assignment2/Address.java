@@ -6,11 +6,16 @@ import java.util.Set;
 @Entity
 public class Address {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+
+    @Column(name = "STREET")
     private String street;
+
+    @Column(name = "NUMBER")
     private Integer number;
-    @ManyToMany(fetch = FetchType.LAZY)
+
+    @ManyToMany(fetch = FetchType.LAZY) //, targetEntity = Person.class ??
     @JoinColumn(name="owners_id")
     private Set<Person> owners;
 

@@ -5,15 +5,19 @@ import javax.persistence.*;
 @Entity
 public class CreditCard {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+
     private int number;
     private int balance;
+    @OneToOne(targetEntity = Pincode.class)
     private Pincode pincode;
-    @ManyToOne
-    @JoinColumn(name = "bank_id")
+
+    @ManyToOne(targetEntity = Bank.class)
     private Bank bank;
+
     private int limit;
+
 
     public int getNumber() {
         return number;
