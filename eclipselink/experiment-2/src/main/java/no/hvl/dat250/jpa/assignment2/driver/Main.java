@@ -29,13 +29,15 @@ public class Main {
         CreditCard firstCard = new CreditCard();
         firstCard.setNumber(12345);
         firstCard.setBalance(-5000);
-        firstCard.setNumber(-10000);
+        firstCard.setLimit(-10000);
+
         firstCard.setPincode(pincode);
 
         CreditCard secondCard = new CreditCard();
         secondCard.setNumber(123);
         secondCard.setBalance(1);
-        secondCard.setNumber(2000);
+        secondCard.setLimit(2000);
+
         secondCard.setPincode(pincode);
 
         Bank bank = new Bank();
@@ -54,13 +56,14 @@ public class Main {
         creditCards.add(firstCard);
         creditCards.add(secondCard);
         person.setCreditCards(creditCards);
-        System.out.println("Max has " + person.getCreditCards().size() + " creditCards");
 
         firstCard.setPincode(pincode);
         secondCard.setPincode(pincode);
 
         firstCard.setOwningBank(bank);
         secondCard.setOwningBank(bank);
+
+        bank.setOwnedCards(creditCards);
 
         em.getTransaction().begin();
 

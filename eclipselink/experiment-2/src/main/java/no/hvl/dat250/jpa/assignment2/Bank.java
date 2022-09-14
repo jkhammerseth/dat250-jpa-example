@@ -26,4 +26,7 @@ public class Bank {
     public Set<CreditCard> getOwnedCards() {
         return creditCards;
     }
+    public void setOwnedCards(Set<CreditCard> creditCards){
+        this.creditCards = creditCards;
+    }
 }
