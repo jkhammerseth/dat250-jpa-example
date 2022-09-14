@@ -8,6 +8,7 @@ public class Pincode {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
+    @JoinColumn(name = "pincode_id")
     private String pincode;
     private Integer count;
 
